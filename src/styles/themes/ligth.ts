@@ -1,19 +1,17 @@
 export default {
-    title: 'ligth',
+    title: 'Ligth',
 
     colors: {
         primary: '#DCDCDC',
         secondary: '#FFFFFF',
-        tertiary: '#f5f5f5',
+        tertiary: '#F5F5F5',
 
         white: '#000',
-        black: '#fff',
+        black: '#FFF',
         gray: '#BFBFBF',
 
-        sucess: '#03bb85',
-        info: '#3b5998',
-        warning: '#ff6961',
-
+        sucess: '#03BB85',
+        info: '#3B5998',
+        warning: '#FF6961',
     },
-
 };
