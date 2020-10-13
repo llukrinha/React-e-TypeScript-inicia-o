@@ -21,5 +21,5 @@ border-bottom: 10px solid ${props=> props.theme.colors.warning};
 `;
 
 export const Controllers= styled.div`
-
+display: flex;
 `;

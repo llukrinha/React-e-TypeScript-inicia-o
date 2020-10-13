@@ -7,7 +7,7 @@ align-items: center;
 `;
 
 export const ToggleLable= styled.span`
-color:${props => props.theme.colors.white}
+color:${props => props.theme.colors.white};
 `;
 
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
