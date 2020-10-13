@@ -6,7 +6,7 @@ display: flex;
 align-items: center;
 `;
 
-export const ToggleLable = styled.span`
+export const ToggleLable= styled.span`
 color:${props => props.theme.colors.white}
 `;
 
@@ -16,4 +16,4 @@ export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
         offColor: theme.colors.warning
     }))<ReactSwitchProps>`
 margin: 0 7px;
-    `;
+`;

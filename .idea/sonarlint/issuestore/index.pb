@@ -36,4 +36,11 @@ I
 O
 src/components/Layout/styles.ts,4\b\4bcc881a3d5f79fc2e804d62287c169bbedadc4c
 =
-src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
+
+src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+O
+src/components/Toggle/index.tsx,1\3\13aa3796333372588580b92968b1b57941ed0a73
+O
+src/components/Toggle/styled.ts,b\a\ba4ed38ead9bf4a6c5c443374025f282a818c4c9
