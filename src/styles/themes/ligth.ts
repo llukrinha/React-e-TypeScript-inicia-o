@@ -3,8 +3,8 @@ export default {
 
     colors: {
         primary: '#DCDCDC',
-        secondary: '#FFFFFF',
-        tertiary: '#F5F5F5',
+        secondary: '#ffffff',
+        tertiary: '#f5f5f5',
 
         white: '#000',
         black: '#FFF',
