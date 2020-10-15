@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useMemo} from "react";
 import ContentHeader from "../../components/ContentHeader";
-import {Container, Content, Filters} from "./styles";
 import SelectInput from "../../components/SelectInput";
 import HistoryFinanceCard from "../../components/HistoryFinanceCard";
 
-const List: React.FC = () => {
+import {Container, Content, Filters} from "./styles";
+
+interface IRouteParams {
+    match: {
+        params: {
+            type: string;
+        }
+    }
+}
+
+const List: React.FC<IRouteParams> = ({match}) => {
+
+    const {type} = match.params;
+    const title = useMemo(() => {
+        return type === "entry-balance" ? "Entradas" : "Saídas"
+    }, [type]);
+    const lineColor = useMemo(() => {
+        return type === "entry-balance" ? "#f7931b" : "#e44c4e"
+    }, [type]);
 
     const months = [
         {value: 7, lable: "Julho"},
@@ -16,9 +33,10 @@ const List: React.FC = () => {
         {value: 2019, lable: 2019},
         {value: 2018, lable: 2018},
     ]
+
     return (
         <Container>
-            <ContentHeader title="List" lineColor="#f7931b">
+            <ContentHeader title={title} lineColor={lineColor}>
                 <SelectInput options={months}/>
                 <SelectInput options={years}/>
             </ContentHeader>
