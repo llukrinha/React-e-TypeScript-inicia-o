@@ -10,9 +10,8 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={Dark}>
             <GlobalStyles/>
-            <Routes/>
+                <Routes/>
         </ThemeProvider>
     );
 }
-
 export default App;

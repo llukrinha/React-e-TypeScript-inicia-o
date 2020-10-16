@@ -12,7 +12,7 @@ const Aside: React.FC = () => {
                 <Title>Minha Carteira</Title>
             </Header>
             <MenuContainer>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/dashboard">
                     <MdDashboard/>
                     Dashboard
                 </MenuItemLink>
@@ -20,7 +20,7 @@ const Aside: React.FC = () => {
                     <MdArrowUpward/>
                     Entradas
                 </MenuItemLink>
-                <MenuItemLink href="/list/entry-balance">
+                <MenuItemLink href="/list/exit-balance">
                     <MdArrowDownward/>
                     Saídas
                 </MenuItemLink>

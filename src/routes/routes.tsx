@@ -12,7 +12,5 @@ const AppRoutes: React.FC = () => (
             <Route path="/list/:type" exact component={List}/>
         </Switch>
     </Layout>
-
 );
-
 export default AppRoutes;
