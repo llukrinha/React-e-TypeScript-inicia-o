@@ -33,5 +33,4 @@ const SelectInput: React.FC<ISelectInputProps> = ({
         </Container>
     );
 }
-
 export default SelectInput;
