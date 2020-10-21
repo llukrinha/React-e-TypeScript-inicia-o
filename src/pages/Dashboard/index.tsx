@@ -6,8 +6,11 @@ import SelectInput from "../../components/SelectInput";
 import listOfmonths from "../../utils/months";
 import expenses from "../../repositories/expenses";
 import gains from "../../repositories/gains";
+import happyImg from "../../assets/happy.svg";
+import sadImg from "../../assets/sad.svg"
 
 import WalletBox from "../../components/WalletBox";
+import MessageBox from "../../components/MessageBox";
 
 const Dashboard: React.FC = () => {
     const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
@@ -84,6 +87,11 @@ const Dashboard: React.FC = () => {
 
                 <WalletBox title="saídas" amount={4850.00} footerlable="atualizado com base nas entradas e saídas"
                            icon="arrowDown" color="#e44c4e"/>
+                <MessageBox
+                title="Muito bem!"
+                description="Sua carteira está positiva!"
+                footerText="Continue assim. Considere investir seu saldo."
+                icon={happyImg}/>
             </Content>
         </Container>
     );
