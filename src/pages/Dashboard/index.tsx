@@ -12,8 +12,8 @@ import grinningImg from "../../assets/grinning.svg"
 
 import WalletBox from "../../components/WalletBox";
 import MessageBox from "../../components/MessageBox";
-import PieChart from "../../components/PieChartBox";
 import PieChartBox from "../../components/PieChartBox";
+import HistoryBox from "../../components/HistoryBox";
 
 const Dashboard: React.FC = () => {
     const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
@@ -175,7 +175,10 @@ const Dashboard: React.FC = () => {
                     description={message.description}
                     footerText={message.footerText}
                     icon={message.icon}/>
+
                 <PieChartBox data={relationExpensesVersusGains}/>
+
+                <HistoryBox/>
             </Content>
         </Container>
     );

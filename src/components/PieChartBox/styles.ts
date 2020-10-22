@@ -60,7 +60,7 @@ width: 45px;
 height: 45px;
 border-radius: 3px;
 
-font-size: 18px;
+font-size: 14px;
 line-height: 40px;
 text-align: center;
 }
