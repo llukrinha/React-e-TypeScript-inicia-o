@@ -70,4 +70,8 @@ margin-left: 5px;
 }
 `;
 
-export const SideRigth = styled.main``;
+export const SideRigth = styled.main`
+display: flex;
+flex: 1;
+justify-content: center;
+`;
