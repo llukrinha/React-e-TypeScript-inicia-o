@@ -12,16 +12,11 @@ import grinningImg from "../../assets/grinning.svg"
 
 import WalletBox from "../../components/WalletBox";
 import MessageBox from "../../components/MessageBox";
+import PieChart from "../../components/PieChart";
 
 const Dashboard: React.FC = () => {
     const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
     const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
-
-    const options = [
-        {value: "Rodrido", lable: "Rodrigo"},
-        {value: "Maria", lable: "Maria"},
-        {value: "Ana", lable: "Ana"},
-    ];
 
     const months = useMemo(() => {
         return listOfmonths.map((month, index) => {
@@ -101,7 +96,7 @@ const Dashboard: React.FC = () => {
                 footerText: "Verifique seus gastos e repense suas despesas.",
                 icon: sadImg
             }
-        } else if (totalBalance == 0) {
+        } else if (totalBalance === 0) {
             return {
                 title: "Uufa!",
                 description: "Neste mês você foi bem, mas não sobrou nada, podemos melhorar.",
@@ -159,6 +154,7 @@ const Dashboard: React.FC = () => {
                     description={message.description}
                     footerText={message.footerText}
                     icon={message.icon}/>
+                    <PieChart/>
             </Content>
         </Container>
     );
