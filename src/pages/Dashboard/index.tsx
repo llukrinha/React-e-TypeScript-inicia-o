@@ -109,6 +109,50 @@ const Dashboard: React.FC = () => {
         return data;
     }, [totalGains, totalExpenses]);
 
+    const historyData = useMemo(() => {
+        return listOfmonths.map((_, month) => {
+            let amountEntry = 0;
+            gains.forEach(gain => {
+                const date = new Date(gain.date);
+                const gainMonth = date.getMonth();
+                const gainYear = date.getFullYear();
+
+                if (gainMonth === month && gainYear === yearSelected) {
+                    try {
+                        amountEntry += Number(gain.amount);
+                    } catch {
+                        throw new Error("amountEntry entry is invalid. amountEntry must be valid number.")
+                    }
+                }
+            });
+            let amountOutput = 0;
+            expenses.forEach(expense => {
+                const date = new Date(expense.date);
+                const expenseMonth = date.getMonth();
+                const expenseYear = date.getFullYear();
+
+                if (expenseMonth === month && expenseYear === yearSelected) {
+                    try {
+                        amountOutput += Number(expense.amount);
+                    } catch {
+                        throw new Error("amountOutput entry is invalid. amountOutput must be valid number.")
+                    }
+                }
+            });
+            return {
+                monthNumber: month,
+                month: listOfmonths[month].substring(0, 3),
+                amountEntry,
+                amountOutput
+            }
+        })
+            .filter(item => {
+                const currentMonth = new Date().getMonth();
+                const currentYear = new Date().getFullYear();
+                return (yearSelected === currentYear && item.monthNumber <= currentMonth) || (yearSelected < currentYear)
+            });
+    }, [yearSelected]);
+
     const message = useMemo(() => {
         if (totalBalance < 0) {
             return {
@@ -178,7 +222,7 @@ const Dashboard: React.FC = () => {
 
                 <PieChartBox data={relationExpensesVersusGains}/>
 
-                <HistoryBox/>
+                <HistoryBox data={historyData} lineColorAmountEntry="#f7931b" lineColorAmountOutput="#e44c4e"/>
             </Content>
         </Container>
     );
