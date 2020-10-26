@@ -14,6 +14,7 @@ import WalletBox from "../../components/WalletBox";
 import MessageBox from "../../components/MessageBox";
 import PieChartBox from "../../components/PieChartBox";
 import HistoryBox from "../../components/HistoryBox";
+import BarChartBox from "../../components/barChart";
 
 const Dashboard: React.FC = () => {
     const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
@@ -153,6 +154,42 @@ const Dashboard: React.FC = () => {
             });
     }, [yearSelected]);
 
+    const relationExpensevesRecurrentVersusEventual = useMemo(() => {
+        let amountRecurrent = 0;
+        let amountEventual = 0;
+
+        expenses
+            .filter((expense) => {
+                const date = new Date(expense.date);
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1;
+
+                return month === monthSelected && year === yearSelected;
+            })
+            .forEach((expense) => {
+                if (expense.frequency === "recorrente") {
+                    return amountRecurrent += Number(expense.amount);
+                }
+                if (expense.frequency === "eventual") {
+                    return amountEventual += Number(expense.amount);
+                }
+            });
+
+        const total = amountRecurrent = amountEventual;
+
+        return [{
+            name: "Recorrentes",
+            amount: amountRecurrent,
+            percent: Number(((amountEventual / total) * 100).toFixed(1)),
+            color: "#f7931b"
+        }, {
+            name: "Eventual",
+            amount: amountEventual,
+            percent: Number(((amountEventual / total) * 100).toFixed(1)),
+            color: "#e44c4e"
+        }]
+    }, [monthSelected, yearSelected]);
+
     const message = useMemo(() => {
         if (totalBalance < 0) {
             return {
@@ -223,6 +260,8 @@ const Dashboard: React.FC = () => {
                 <PieChartBox data={relationExpensesVersusGains}/>
 
                 <HistoryBox data={historyData} lineColorAmountEntry="#f7931b" lineColorAmountOutput="#e44c4e"/>
+
+                <BarChartBox data={relationExpensevesRecurrentVersusEventual} title="Saídas"/>
             </Content>
         </Container>
     );
