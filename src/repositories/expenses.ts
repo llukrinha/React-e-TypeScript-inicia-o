@@ -44,8 +44,11 @@ export default [
   {"description":"Energia elétrica",      "amount":"250.00","type":"saída","frequency":"recorrente","date":"2020-07-10"},
   {"description":"Água",                  "amount":"90.00", "type":"saída","frequency":"recorrente","date":"2020-07-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2020-07-23"},
+  {"description":"Filmes",              "amount":"2500.00", "type":"saída","frequency":"recorrente","date":"2020-12-23"},
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2020-07-23"},
   {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2020-07-25"},
   {"description":"Cafeteira",             "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2020-07-26"},
+  {"description":"Lanchonete",            "amount":"450.00","type":"saída","frequency":"eventual",  "date":"2020-10-26"},
+  {"description":"Cinema",            "amount":"1400.00","type":"saída","frequency":"eventual",  "date":"2020-09-26"},
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2020-07-19"}
 ]
