@@ -92,18 +92,18 @@ const Dashboard: React.FC = () => {
 
     const relationExpensesVersusGains = useMemo(() => {
         const total = totalGains + totalExpenses;
-        const percentGains = (totalGains / total) * 100;
-        const percentExpenses = (totalExpenses / total) * 100;
+        const percentGains = Number(((totalGains / total) * 100).toFixed(1));
+        const percentExpenses = Number(((totalExpenses / total) * 100).toFixed(1));
 
         const data = [{
             name: "Entradas",
             value: totalGains,
-            percent: Number(percentGains.toFixed(1)),
+            percent: percentGains ? percentGains : 0,
             color: "#e44c4e"
         }, {
             name: "Saídas",
             value: totalExpenses,
-            percent: Number(percentExpenses.toFixed(1)),
+            percent: percentExpenses ? percentExpenses : 0,
             color: "#f7931b"
         },
         ];
@@ -249,6 +249,13 @@ const Dashboard: React.FC = () => {
                 footerText: "Proximo mês vamos ver se sobra ao menos para comprar um sorvete.",
                 icon: grinningImg
             }
+        } else if (totalGains === 0 && totalExpenses === 0) {
+        return{
+            title: "Eita!",
+            description: "Neste mês não há registros.",
+            footerText: "Próximo mes vamos tentar não sumir assim do nada?!.",
+            icon: grinningImg}
+
         } else {
             return {
                 title: "Oopa!",
