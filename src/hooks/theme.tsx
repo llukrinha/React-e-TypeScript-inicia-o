@@ -1,7 +1,7 @@
 import React, {createContext, useState, useContext} from "react";
 
 import dark from "../styles/themes/dark";
-import light from "../styles/themes/ligth";
+import light from "../styles/themes/light";
 
 interface IThemeContext {
     toggleTheme(): void;
@@ -33,7 +33,7 @@ const ThemeProvider: React.FC = ({children}) => {
     const [theme, setTheme] = useState<ITheme>(dark);
 
     const toggleTheme = () => {
-        if (theme.title === "dark") {
+        if (theme.title === "Dark") {
             setTheme(light);
         } else {
             setTheme(dark);
