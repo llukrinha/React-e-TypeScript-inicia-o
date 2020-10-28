@@ -37,5 +37,5 @@ const PieChartBox: React.FC<IPieChartProps> = ({data}) => (
             </ResponsiveContainer>
         </SideRigth>
     </Container>
-);
+)
 export default PieChartBox;
