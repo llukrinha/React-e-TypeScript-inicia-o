@@ -25,7 +25,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
             <h2>Histórico de saldo</h2>
             <LegendContainer>
                 <Legend color={lineColorAmountEntry}>
-                    <div>30%</div>
+                    <div></div>
                     <span>Entradas</span>
                 </Legend>
                 <Legend color={lineColorAmountOutput}>

@@ -9,6 +9,7 @@ import gains from "../../repositories/gains";
 import happyImg from "../../assets/happy.svg";
 import sadImg from "../../assets/sad.svg"
 import grinningImg from "../../assets/grinning.svg"
+import suspiciousImg from "../../assets/suspicious.svg"
 
 import WalletBox from "../../components/WalletBox";
 import MessageBox from "../../components/MessageBox";
@@ -242,6 +243,14 @@ const Dashboard: React.FC = () => {
                 footerText: "Verifique seus gastos e repense suas despesas.",
                 icon: sadImg
             }
+        } else if (totalGains === 0 && totalExpenses === 0) {
+            return {
+                title: "Eita!",
+                description: "Neste mês não há registros.",
+                footerText: "Próximo mês vamos tentar não sumir assim do nada?!.",
+                icon: suspiciousImg
+            }
+
         } else if (totalBalance === 0) {
             return {
                 title: "Uufa!",
@@ -249,13 +258,6 @@ const Dashboard: React.FC = () => {
                 footerText: "Proximo mês vamos ver se sobra ao menos para comprar um sorvete.",
                 icon: grinningImg
             }
-        } else if (totalGains === 0 && totalExpenses === 0) {
-        return{
-            title: "Eita!",
-            description: "Neste mês não há registros.",
-            footerText: "Próximo mes vamos tentar não sumir assim do nada?!.",
-            icon: grinningImg}
-
         } else {
             return {
                 title: "Oopa!",

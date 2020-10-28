@@ -1,9 +1,6 @@
 import React from "react";
 import {Container, SideLeft, SideRight, LegendContainer, Legend} from "./styles";
-import {
-    ResponsiveContainer, BarChart,
-    Bar, Cell, Tooltip, LineChart
-} from "recharts";
+import {ResponsiveContainer, BarChart, Bar, Cell, Tooltip} from "recharts";
 
 import formatCurrency from "../../utils/formatCurrency";
 
@@ -37,7 +34,7 @@ const BarChartBox: React.FC<IBarChartProps> = ({
             <SideRight>
                 <ResponsiveContainer>
                     <BarChart data={data}>
-                        <Bar dataKey="amount">
+                        <Bar dataKey="amount" name="Valor">
                             {data.map((indicator) => (
                                 <Cell key={indicator.name}
                                       cursor="pointer"
@@ -45,7 +42,7 @@ const BarChartBox: React.FC<IBarChartProps> = ({
                                 />
                             ))}
                         </Bar>
-                        <Tooltip formatter={(value) => formatCurrency(Number(value))}/>
+                        <Tooltip cursor={{fill:"none"}} formatter={(value) => formatCurrency(Number(value))}/>
                     </BarChart>
                 </ResponsiveContainer>
             </SideRight>

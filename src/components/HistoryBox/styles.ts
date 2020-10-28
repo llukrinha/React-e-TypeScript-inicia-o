@@ -30,7 +30,7 @@ display: flex;
 justify-content: space-between;
 
 >h2{
-padding-left: 15px;
+padding-left: 16px;
 margin-bottom: 20px;
 }
 `;
@@ -39,7 +39,7 @@ export const LegendContainer = styled.ul`
 list-style: none;
 display: flex;
 
-padding-right: 15px;
+padding-right: 16px;
 
 `;
 
@@ -50,6 +50,7 @@ align-items: center;
 margin-bottom: 7px;
 margin-left: 7px;
 
+
 >div{
 background-color: ${props => props.color};
 width: 45px;
@@ -59,5 +60,9 @@ border-radius: 3px;
 font-size: 14px;
 line-height: 40px;
 text-align: center;
+}
+
+>span{
+padding: 0 5px;
 }
 `;
