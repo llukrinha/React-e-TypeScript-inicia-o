@@ -1,8 +1,8 @@
 import React, {useMemo} from "react";
 import CountUp from "react-countup";
-import arrowDownImg from "../../assets/arrow-down.svg";
-import arrowUpImg from "../../assets/arrow-up.svg";
-import cifraoImg from "../../assets/logo.svg";
+import arrowDownImg from "../../assets/arrow-down3.svg";
+import arrowUpImg from "../../assets/arrow-up3.svg";
+import cifraoImg from "../../assets/cifrao2.svg";
 
 import {Container} from "./styles";
 
