@@ -41,6 +41,7 @@ background-color: ${props=> props.theme.colors.tertiary};
 `;
 
 export const FormTitle = styled.h1`
+margin-bottom: 40px;
 color:${props => props.theme.colors.white};
 
 &:after{
