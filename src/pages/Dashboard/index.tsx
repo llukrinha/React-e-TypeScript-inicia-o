@@ -89,14 +89,14 @@ const Dashboard: React.FC = () => {
 
     const totalBalance = useMemo(() => {
         return totalGains - totalExpenses;
-    }, [monthSelected, yearSelected]);
+    }, [totalExpenses, totalGains]);
 
     const relationExpensesVersusGains = useMemo(() => {
         const total = totalGains + totalExpenses;
         const percentGains = Number(((totalGains / total) * 100).toFixed(1));
         const percentExpenses = Number(((totalExpenses / total) * 100).toFixed(1));
 
-        const data = [{
+        return [{
             name: "Entradas",
             value: totalGains,
             percent: percentGains ? percentGains : 0,
@@ -108,7 +108,6 @@ const Dashboard: React.FC = () => {
             color: "#f7931b"
         },
         ];
-        return data;
     }, [totalGains, totalExpenses]);
 
     const historyData = useMemo(() => {
@@ -266,7 +265,7 @@ const Dashboard: React.FC = () => {
                 icon: happyImg
             }
         }
-    }, [totalBalance]);
+    }, [totalBalance, totalExpenses, totalGains]);
 
     const handleMonthSelected = useCallback((month: string) => {
         try {

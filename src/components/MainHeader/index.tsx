@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 
-import emojis from '../../utils/emojis';
 import Toggle from "../Toggle";
+import emojis from '../../utils/emojis';
 
 import {useTheme} from "../../hooks/theme";
 
@@ -10,7 +10,7 @@ import {Container, Profile, UserName, Welcome} from './styles';
 const MainHeader: React.FC = () => {
     const {toggleTheme, theme} = useTheme();
 
-    const [darkTheme, setDarkTheme] = useState(() => theme.title === "Dark" ? true : false);
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === "Dark");
 
     const handleChangeTheme = ()=>{
         setDarkTheme(!darkTheme);
