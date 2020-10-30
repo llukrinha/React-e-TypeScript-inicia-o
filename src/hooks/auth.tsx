@@ -2,9 +2,7 @@ import React, {createContext, useState, useContext} from "react";
 
 interface IAuthContext {
     logged: boolean;
-
-    signIn(email: string, passowrd: string): void;
-
+    signIn(email: string, password: string): void;
     signOut(): void;
 }
 
@@ -18,7 +16,7 @@ const AuthProvider: React.FC = ({children}) => {
     });
 
     const signIn = (email: string, password: string) => {
-        if (email === "rodrigo@email.com" || password === "123") {
+        if (email === "lucas@email.com" && password === "123") {
             localStorage.setItem("@minha-carteira:logged", "true");
             setLogged(true);
         } else {
@@ -30,7 +28,9 @@ const AuthProvider: React.FC = ({children}) => {
         localStorage.removeItem("@minha-carteira:logged");
         setLogged(false);
     }
-    return (<AuthContext.Provider value={{logged, signIn, signOut}}>
+
+    return (
+        <AuthContext.Provider value={{logged, signIn, signOut}}>
             {children}
         </AuthContext.Provider>
     )
@@ -41,5 +41,4 @@ function useAuth(): IAuthContext {
 
     return context;
 }
-
 export {AuthProvider, useAuth};
